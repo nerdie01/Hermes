@@ -1,4 +1,5 @@
 import * as React from 'react';
+import  * as HTTPClient from '../HTTPClient';
 import * as FileSystem from 'expo-file-system';
 
 import { Audio } from 'expo-av';
@@ -7,7 +8,6 @@ import { StatusBar } from 'expo-status-bar';
 import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 import Background from '../assets/background/home.png'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import  * as HTTPClient from '../HTTPClient';
 import styles from './styles/Styles';
 
 var recording;
@@ -55,7 +55,7 @@ export default function Home({ navigation }) {
 
       navigation.navigate('Loading');
 
-      HTTPClient.sendToClient(base64);
+      HTTPClient.sendToClient(base64, true);
   }
 
   return (
@@ -67,7 +67,7 @@ export default function Home({ navigation }) {
         </TouchableOpacity>
         <Text style={styles.label}>{recordingState ? 'Stop Recording' : 'Start Recording'}</Text>
         <View style={{padding: 30}} />
-        <TouchableOpacity onPress={HTTPClient.helloWorld} style={styles.circleButton}>
+        <TouchableOpacity style={styles.circleButton}>
           <Icon name="keyboard-o" size={75}>
           </Icon>
         </TouchableOpacity>

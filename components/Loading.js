@@ -14,12 +14,12 @@ const emotionEmojis = {
   'caring': '😊',
   'confusion': '😕',
   'curiosity': '🤔',
-  'desire': '🥺',
+  'desire': '🤑',
   'disappointment': '😞',
   'disagreement': '👎',
   'disgust': '🤢',
   'embarrassment': '😳',
-  'excitement': '😁',
+  'excitement': '🤩',
   'fear': '😨',
   'gratitude': '😊',
   'grief': '😢',
@@ -48,7 +48,7 @@ export default function Loading({ navigation }) {
       console.log('Successfully received data from websocket');
 
       var emotions_formatted = [];
-      for (emotion in emotions) {
+      for (var emotion in emotions) {
         if (emotion != 'neutral') {
           emotions_formatted.push({
               emoji: emotionEmojis[emotion],
@@ -61,7 +61,7 @@ export default function Loading({ navigation }) {
       emotions = emotions_formatted;
       console.log('Successfully formatted emotion data');
 
-      navigation.navigate('Summary');
+      navigation.navigate('Results');
     };
   }
 
