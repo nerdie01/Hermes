@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export var ws = new WebSocket('ws://192.168.86.28:25565');
+export var ws = new WebSocket('ws://192.168.86.28:25565');;
 export var summary, transcription, emotions;
 
 export function sendToClient(msg, encoded) {
@@ -23,7 +23,7 @@ export function sendToClient(msg, encoded) {
             ws.send(msg);
         }
     }
-    catch (err) {
-        console.log(err);
+    catch {
+        console.error('Error sending message to server: ', error);
     }
 }
