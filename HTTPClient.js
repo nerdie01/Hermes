@@ -7,7 +7,7 @@ export function sendToClient(msg, encoded) {
     try {
         if (encoded) {
             //send a start token to the server
-            ws.send('START');
+            ws.send('$$B64START');
             //divide msg into 1000 char chunks and send
             var chunkSize = 10000;
             var chunks = [];
@@ -17,7 +17,10 @@ export function sendToClient(msg, encoded) {
             for (var i = 0; i < chunks.length; i++) {
                 ws.send(chunks[i]);
             }
-            ws.send('END');
+            ws.send('$$B64END');
+        }
+        else {
+            ws.send(msg);
         }
     }
     catch (err) {

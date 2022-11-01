@@ -62,14 +62,12 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <ImageBackground source={Background} resizeMode="cover" style={styles.background}>
         <TouchableOpacity onPress={recordingState ? stopRecording : startRecording} style={recordingState ? styles.circleButtonActive : styles.circleButton}>
-          <Icon name="microphone" size={75}>
-          </Icon>
+          <Icon name="microphone" size={75}/>
         </TouchableOpacity>
         <Text style={styles.label}>{recordingState ? 'Stop Recording' : 'Start Recording'}</Text>
         <View style={{padding: 30}} />
-        <TouchableOpacity style={styles.circleButton}>
-          <Icon name="keyboard-o" size={75}>
-          </Icon>
+        <TouchableOpacity onPress={() => navigation.navigate('Manual')} style={styles.circleButton}>
+          <Icon name="keyboard-o" size={75}/>
         </TouchableOpacity>
         <Text style={styles.label}>Manual Input</Text>
         <StatusBar style="auto" />

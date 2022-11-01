@@ -19,13 +19,21 @@ export default StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#00013F'
   },
+  containerLeft: {
+    flex: 1,
+    alignItems: 'left',
+    justifyContent: "left",
+    width: '100%',
+    height: '100%',
+    marginLeft: '5%',
+    marginVertical: 40,
+  },
   background: {
     flex: 1,
     alignItems: 'center',
     justifyContent: "center",
     width: '100%',
     height: '100%',
-
   },
   circleButton: {
     marginTop: 20,
@@ -117,5 +125,17 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontFamily: Platform.OS === 'ios' ? 'KohinoorBangla-Semibold' : 'Roboto',
     color: colors['accent'],
+  },
+  textInput: {
+    marginTop: 20,
+    marginHorizontal: 8,
+    fontSize: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'left',
+    fontFamily: Platform.OS === 'ios' ? 'KohinoorBangla-Regular' : 'Roboto',
+    color: colors['secondary'],
+    borderBottomColor: colors['primary'],
+    borderBottomWidth: 1,
   },
 });
